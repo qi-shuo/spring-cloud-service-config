@@ -1,0 +1,10 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: qis-server-email
+  mail:
+    host: smtp.qq.com
+    username: 932475943@qq.com
+    password: emumovelargxbdcd
