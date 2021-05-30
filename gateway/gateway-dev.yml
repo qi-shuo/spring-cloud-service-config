@@ -20,19 +20,19 @@ spring:
           predicates:
             - Path=/user/login/**
           filters:
-            - IgnoreLoginGlobalFilter
+            - IgnoreLoginGlobal
         - id: service-user-router-login-register
           uri: lb://qis-server-user
           predicates:
             - Path=/user/register/**
           filters:
-            - IgnoreLoginGlobalFilter
+            - IgnoreLoginGlobal
         - id: service-user-router      # 我们自定义的路由 ID，保持唯一
           uri: lb://qis-server-user
           predicates: # 断言：路由条件，Predicate 接受一个输入参数，返回一个布尔值结果。该接口包含多种默 认方法来将 Predicate 组合成其他复杂的逻辑（比如：与，或，非）。
             - Path=/user/**
           filters:
-            - IgnoreLoginGlobalFilter
+            - IgnoreLoginGlobal
 redirect:
   url: http://localhost/api/login
 
